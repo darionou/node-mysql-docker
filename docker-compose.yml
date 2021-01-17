@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  samples:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      - PORT=3000
+    env_file:
+      - ./.env
+    ports:
+      - 3000:3000
+      - 9222:9222
